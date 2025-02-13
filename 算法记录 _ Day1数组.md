@@ -1,12 +1,9 @@
 # 704. 二分查找
-:::tips
 <font style="color:#333333;">题目链接：</font>[704. 二分查找 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-search/)
 
 <font style="color:#333333;">文章讲解：</font>[代码随想录](https://programmercarl.com/0704.%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE.html)
 
 <font style="color:#333333;">视频讲解：</font>[手把手带你撕出正确的二分法 | 二分查找法 | 二分搜索法 | LeetCode：704. 二分查找_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1fA4y1o715)
-
-:::
 
 二分查找的核心点：**区间的概念**
 
@@ -142,53 +139,56 @@ class Solution:
   
 【解法三】暴力解-两重for循环
 
-class Solution:  
-    def removeElement(self, nums: List[int], val: int) -> int:  
-        i, l = 0, len(nums)  
-        while i < l:  
-            if nums[i] == val: # 找到等于目标值的节点  
-                for j in range(i+1, l): # 移除该元素，并将后面元素向前平移  
-                    nums[j - 1] = nums[j]  
-                l -= 1  
-                i -= 1  
-            i += 1  
-        return l  
-977.有序数组的平方  
-题目链接：977. 有序数组的平方 - 力扣（LeetCode）
+```python
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        i, l = 0, len(nums)
+        while i < l:
+            if nums[i] == val: # 找到等于目标值的节点
+                for j in range(i+1, l): # 移除该元素，并将后面元素向前平移
+                    nums[j - 1] = nums[j]
+                l -= 1
+                i -= 1
+            i += 1
+        return l
+```
 
-文章讲解：代码随想录
+---
 
-视频讲解： 双指针法经典题目 | LeetCode：977.有序数组的平方_哔哩哔哩_bilibili
+# 977.有序数组的平方
+题目链接：[977. 有序数组的平方 - 力扣（LeetCode）](https://leetcode.cn/problems/squares-of-a-sorted-array/)
+
+文章讲解：[代码随想录](https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html)
+
+视频讲解： [双指针法经典题目 | LeetCode：977.有序数组的平方_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1QB4y1D7ep) 
 
  【解法一】双指针法
 
-
-
-class Solution:  
-    def sortedSquares(self, nums: List[int]) -> List[int]:  
-        l, r, i = 0, len(nums)-1, len(nums)-1  
-        res = [float('inf')] * len(nums) # 需要提前定义列表，存放结果  
-        while l <= r:  
-            if nums[l] ** 2 < nums[r] ** 2: # 左右边界进行对比，找出最大值  
-                res[i] = nums[r] ** 2  
-                r -= 1 # 右指针往左移动  
-            else:  
-                res[i] = nums[l] ** 2  
-                l += 1 # 左指针往右移动  
-            i -= 1 # 存放结果的指针需要往前平移一位  
-        return res  
-【解法二】暴力排序法+列表推导法
-
-class Solution:  
-    def sortedSquares(self, nums: List[int]) -> List[int]:  
-        return sorted(x*x for x in nums)  
- 用时：3h  
-————————————————
-
-```plain
-                        版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。
-                    
+```python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        l, r, i = 0, len(nums)-1, len(nums)-1
+        res = [float('inf')] * len(nums) # 需要提前定义列表，存放结果
+        while l <= r:
+            if nums[l] ** 2 < nums[r] ** 2: # 左右边界进行对比，找出最大值
+                res[i] = nums[r] ** 2
+                r -= 1 # 右指针往左移动
+            else:
+                res[i] = nums[l] ** 2
+                l += 1 # 左指针往右移动
+            i -= 1 # 存放结果的指针需要往前平移一位
+        return res
 ```
 
-原文链接：[https://blog.csdn.net/2401_87221149/article/details/145620996](https://blog.csdn.net/2401_87221149/article/details/145620996)
+【解法二】暴力排序法+列表推导法
+
+```python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -> List[int]:
+        return sorted(x*x for x in nums)
+```
+
+  
+ 用时：3h  
+
 
