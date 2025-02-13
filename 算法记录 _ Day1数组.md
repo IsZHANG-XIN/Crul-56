@@ -120,6 +120,8 @@ class Solution:
 快指针：寻找新数组的元素 ，新数组就是不含有目标元素的数组  
 慢指针：指向更新 新数组下标的位置
 
+![](https://cdn.nlark.com/yuque/0/2025/gif/49293158/1739462653486-cd3164f2-da39-43b3-ac2a-138d00d0372e.gif)
+
 ```python
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
@@ -161,6 +163,8 @@ class Solution:
 文章讲解：[代码随想录](https://programmercarl.com/0977.%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9.html)
 
 视频讲解： [双指针法经典题目 | LeetCode：977.有序数组的平方_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1QB4y1D7ep) 
+
+![](https://cdn.nlark.com/yuque/0/2025/gif/49293158/1739462664406-bd3ec78a-70bd-4be2-976b-354ecb593c87.gif)
 
  【解法一】双指针法
 
