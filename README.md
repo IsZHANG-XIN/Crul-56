@@ -1,7 +1,6 @@
 # Crul-56 
 # Notes of learning algorithms
-----------------------------
-## Catalog
+## CATALOG
 
 ### Day1
 数组理论基础
